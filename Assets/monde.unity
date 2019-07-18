@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 92643439}
   - component: {fileID: 92643443}
   - component: {fileID: 92643442}
+  - component: {fileID: 92643444}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -251,6 +252,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &92643444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92643437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1bc3b39df8e8f4091949a6ba1ade7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charisme: 10
+  vie: 5
+  MAXvie: 5
+  MINvie: 0
+  energie: 7
+  MAXenergie: 7
+  MINenergie: 0
+  soif: 10
+  MAXsoif: 10
+  MINsoif: 0
+  faim: 10
+  MAXfaim: 10
+  MINfaim: 0
 --- !u!1 &121721559
 GameObject:
   m_ObjectHideFlags: 0
