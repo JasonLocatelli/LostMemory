@@ -20,7 +20,7 @@ public class PlayerStats : MonoBehaviour
     public float MAXsoif = 10f;
     public float MINsoif = 0f;
 
-    private float faimtime = 1;
+   // private float faimtime = 1;
     public float faim = 10f;
     public float MAXfaim = 10f;
     public float MINfaim = 0f;

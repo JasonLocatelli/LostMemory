@@ -15,8 +15,9 @@ public class PlayerMotor : MonoBehaviour
     public string inputRight;
 
     public Vector3 jumpSpeed;
+    Vector3 lookPos;
     CapsuleCollider playerCollider;
-    
+
     void Start()
     {
         playerCollider = gameObject.GetComponent<CapsuleCollider>();
@@ -24,11 +25,17 @@ public class PlayerMotor : MonoBehaviour
 
     bool IsGrounded()
     {
-        return Physics.CheckCapsule(playerCollider.bounds.center, new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y - 0.1f, playerCollider.bounds.center.z), 0.5f);
+        Vector3 dwn = transform.TransformDirection(Vector3.down);
+
+        return (Physics.Raycast(transform.position, dwn, 1));
     }
+
+
 
     void Update()
     {
+        Turning();
+
         // Avancer
         if (Input.GetKey(inputFront) && !Input.GetKey(KeyCode.LeftShift))
         {
@@ -78,6 +85,25 @@ public class PlayerMotor : MonoBehaviour
             v.y = jumpSpeed.y;
 
             gameObject.GetComponent<Rigidbody>().velocity = jumpSpeed;
+        }
+
+  
+
+        void Turning()
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit hit;
+
+            if(Physics.Raycast(ray, out hit, 100))
+            {
+                lookPos = hit.point;
+            }
+
+            Vector3 lookDir = lookPos - transform.position;
+            lookDir.y = 0;
+
+            transform.LookAt(transform.position + lookDir, Vector3.up);
         }
 
     }
