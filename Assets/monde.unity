@@ -149,15 +149,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92643437}
-  m_LocalRotation: {x: 0, y: -0.6592147, z: 0, w: 0.7519548}
-  m_LocalPosition: {x: 2.85, y: 1, z: 0.25}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 766381163}
   - {fileID: 1239346937}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: -82.48, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &92643439
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -230,12 +230,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 3
-  runSpeed: 7
-  inputFront: z
-  inputBack: s
-  inputLeft: q
-  inputRight: d
-  jumpSpeed: {x: 0, y: 5, z: 0}
+  speed: 5
+  jumpForce: 7
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!54 &92643443
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -266,17 +265,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charisme: 10
   vie: 5
-  MAXvie: 5
-  MINvie: 0
+  vieMAX: 5
   energie: 7
-  MAXenergie: 7
-  MINenergie: 0
+  energieMAX: 7
   soif: 10
-  MAXsoif: 10
-  MINsoif: 0
+  soifMAX: 10
   faim: 10
-  MAXfaim: 10
-  MINfaim: 0
+  faimMAX: 10
 --- !u!1 &121721559
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795525334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -2, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -734,7 +729,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990822917}
   m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 2.85, y: 19.4, z: -17}
+  m_LocalPosition: {x: 0, y: 18.6, z: -16.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -775,7 +770,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
