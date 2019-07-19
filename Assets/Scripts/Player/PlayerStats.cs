@@ -9,26 +9,21 @@ public class PlayerStats : MonoBehaviour
     public float charisme = 10f;
 
     public float vie = 5f;
-    public float MAXvie = 5f;
-    public float MINvie = 0;
+    public float vieMAX = 5f;
 
     public float energie = 7f;
-    public float MAXenergie = 7f;
-    public float MINenergie = 0f;
+    public float energieMAX = 7f;
 
     public float soif = 10f;
-    public float MAXsoif = 10f;
-    public float MINsoif = 0f;
+    public float soifMAX = 10f;
 
    // private float faimtime = 1;
     public float faim = 10f;
-    public float MAXfaim = 10f;
-    public float MINfaim = 0f;
+    public float faimMAX = 10f;
 
     // Controle de la soif
     IEnumerator timeSoif()
     {
-
         while (soif > 0)
         {
             yield return new WaitForSeconds(60);
@@ -43,7 +38,6 @@ public class PlayerStats : MonoBehaviour
 
     IEnumerator timeSoifZero()
     {
-
         while (soif == 0f)
         {
             yield return new WaitForSeconds(30);
@@ -59,7 +53,6 @@ public class PlayerStats : MonoBehaviour
     // Controle de la faim
     IEnumerator timeFaim()
     {
-
         while (faim > 0)
         {
             yield return new WaitForSeconds(120);
@@ -74,7 +67,6 @@ public class PlayerStats : MonoBehaviour
 
     IEnumerator timeFaimZero()
     {
-
         while (faim == 0f)
         {
             yield return new WaitForSeconds(60);
@@ -104,53 +96,55 @@ public class PlayerStats : MonoBehaviour
         // Delimitation des caractéristiques du joueur
 
         // Delimitation de l'energie
-        if (energie < MINenergie)
+        if (energie < 0)
         {
-            energie = MINenergie;
+            energie = 0;
         }
 
-        if (energie > MAXenergie)
+        if (energie > energieMAX)
         {
-            energie = MAXenergie;
+            energie = energieMAX;
         }
 
-        if (energie < MAXenergie)
+        /*
+        if (energie < energieMAX)
         {
             energie += 0.20f * Time.deltaTime;
         }
+        */
 
         // Delimitation de la soif
-        if (soif < MINsoif)
+        if (soif < 0)
         {
-            soif = MINsoif;
+            soif = 0;
         }
 
-        if (soif > MAXsoif)
+        if (soif > soifMAX)
         {
-            soif = MAXsoif;
+            soif = soifMAX;
         }
 
         // Delimitation de la faim
-        if (faim < MINfaim)
+        if (faim < 0)
         {
-            faim = MINfaim;
+            faim = 0;
         }
 
-        if (faim > MAXfaim)
+        if (faim > faimMAX)
         {
-            faim = MAXfaim;
+            faim = faimMAX;
         }
 
         // Delimitation de la vie
-        if (vie < MINvie)
+        if (vie < 0)
         {
-            vie = MINvie;
+            vie = 0;
         }
 
 
-        if (vie > MAXvie)
+        if (vie > vieMAX)
         {
-            vie = MAXvie;
+            vie = vieMAX;
         }
 
         // Mort du joueur 
