@@ -19,7 +19,6 @@ public class PlayerMotor : MonoBehaviour
     Rigidbody playerRigidbody;
     CapsuleCollider playerCollider;
 
-    public LayerMask groundLayers;
 
     PlayerStats playerStats;
     void Start()
@@ -37,14 +36,14 @@ public class PlayerMotor : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Avancer
+        // Mouvement 
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         Move(h, v);
         Turning();
 
-        // Sauter
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+ 
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
@@ -75,11 +74,11 @@ public class PlayerMotor : MonoBehaviour
 
         playerRigidbody.MovePosition(transform.position + movement);
     }
-
+    
     bool IsGrounded()
     {
-        return Physics.CheckCapsule(playerCollider.bounds.center, new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y, playerCollider.bounds.center.z), playerCollider.radius * 0.5f, groundLayers);
+        return Physics.Raycast(transform.position, Vector3.down, playerCollider.bounds.extents.y + 0.1f);
     }
-
+    
 
 }
