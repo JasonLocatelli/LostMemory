@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-
-    
     public float charisme = 10f;
 
     public float vie = 5f;
@@ -21,6 +19,7 @@ public class PlayerStats : MonoBehaviour
     public float faim = 10f;
     public float faimMAX = 10f;
 
+    public float force;
     // Controle de la soif
     IEnumerator timeSoif()
     {
