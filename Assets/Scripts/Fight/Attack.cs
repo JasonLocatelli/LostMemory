@@ -18,16 +18,21 @@ public class Attack : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        if(other.tag == "Enemy")
+ 
+        if (Input.GetKey(KeyCode.Mouse0))
         {
-            
-        }
+            Debug.Log("Attaque");
+            if (collider.gameObject.tag == "Enemy")
+            {
+                Debug.Log(collider.GetComponent<EnemyStats>().vie -= owner.GetComponent<PlayerStats>().force);
+            }
 
-        if (other.tag == "Player")
-        {
-
+            if (collider.gameObject.tag == "Player")
+            {
+            Debug.Log(collider.GetComponent<PlayerStats>().vie -= owner.GetComponent<EnemyStats>().force);
+            }
         }
     }
 }

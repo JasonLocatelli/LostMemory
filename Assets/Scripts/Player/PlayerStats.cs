@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public float charisme = 10f;
+    public float charisme;
 
-    public float vie = 5f;
-    public float vieMAX = 5f;
+    public float vie;
+    public float vieMAX;
 
-    public float energie = 7f;
-    public float energieMAX = 7f;
+    public float energie;
+    public float energieMAX;
 
-    public float soif = 10f;
-    public float soifMAX = 10f;
+    public float soif;
+    public float soifMAX;
 
-   // private float faimtime = 1;
-    public float faim = 10f;
-    public float faimMAX = 10f;
+    // private float faimtime = 1;
+    public float faim;
+    public float faimMAX;
 
     public float force;
     // Controle de la soif
@@ -81,6 +81,10 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        vieMAX = vie;
+        soifMAX = soif;
+        energieMAX = energie;
+        faimMAX = faim;
         // Lancement des timers de faim et de soif
         /*
         StartCoroutine(timeSoif());
