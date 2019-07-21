@@ -19,7 +19,10 @@ public class PlayerStats : MonoBehaviour
     public float faim;
     public float faimMAX;
 
-    public float force;
+    public int attaque;
+    public int force;
+    public int armure;
+
     // Controle de la soif
     IEnumerator timeSoif()
     {
