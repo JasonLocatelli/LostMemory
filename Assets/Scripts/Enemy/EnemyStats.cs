@@ -12,7 +12,10 @@ public class EnemyStats : MonoBehaviour
     public float energie;
     public float energieMAX;
 
-    public float force;
+    public int attaque;
+    public int force;
+    public int armure;
+
     // Start is called before the first frame update
     void Start()
     {
