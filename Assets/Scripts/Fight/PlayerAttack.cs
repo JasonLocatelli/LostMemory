@@ -34,7 +34,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (collider.gameObject.tag == "Enemy")
             {
-                collider.GetComponent<EnemyStats>().vie -= owner.GetComponent<PlayerStats>().force;
+                collider.GetComponent<EnemyStats>().vie -= (owner.GetComponent<PlayerStats>().attaque+gameObject.GetComponent<>
             }
         }
     }
